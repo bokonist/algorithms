@@ -1,2 +1,2 @@
-# algorithms-practice
-implementations of common algorithms
+# algorithms
+my implementations of common algorithms and useful data structures
