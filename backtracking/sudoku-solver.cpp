@@ -44,7 +44,7 @@ void printMatrix(int grid[gridSize][gridSize]) //to print the current matrix
 	}
 }
 
-bool isPlacabale(int grid[gridSize][gridSize], int row, int col, int val)
+bool isPlacable(int grid[gridSize][gridSize], int row, int col, int val)
 {
 	for (int i = 0; i < gridSize; i++) //check if already in the current row
         if (grid[row][i] == val)
@@ -82,7 +82,7 @@ bool solveGrid(int grid[gridSize][gridSize])
 	{
 		for (int i = 1; i <= 9; ++i)
 		{
-			if(isPlacabale(grid,result.first,result.second,i))
+			if(isPlacable(grid,result.first,result.second,i))
 			{
 			//	op "trying "<<i<<" on position "<<result.first<<","<<result.second; nl
 				grid[result.first][result.second]=i;
