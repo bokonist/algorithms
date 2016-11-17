@@ -2,7 +2,7 @@
 my implementations of common algorithms and useful data structures
 
 
-INDEX OF CONTENTS
+## INDEX OF CONTENTS
   1. **advanced-data-structures**
       1. graphs
           * BFS (breadth first search)
@@ -35,4 +35,5 @@ INDEX OF CONTENTS
       * mergeSort
       * quickSort
       * radixsort
-  cpp-template (a template for competitions, filled with shorthands and useful macros)
+      
+ cpp-template (a template for competitions, filled with shorthands and useful macros)
