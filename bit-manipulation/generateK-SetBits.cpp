@@ -34,43 +34,50 @@ bool swapBits(int &val,int i, int j) //swap the i'th and j'th Least significant 
 		return true; //swapped
 	}
 }
-int highest=0;
-void generateKBitNumbers(int val, int k,int n, int mode=0) //permute the kth to n'th bit of val. mode 1 to print in binary
+int highest=INT_MIN;
+void generateKBitNumbers(int &val, int k,int n, int mode=0) //permute the kth to n'th bit of val. mode 1 to print in binary
 {
-	int temp=0;
 	if(k==n)
 	{
-		if(val>highest)
+		//if(val>highest)
 		{
 			highest=val;	
 			if(mode==1)
 			{
-				op bitset<5>(val); nl
+				op bitset<5>(val);nl
 			}
 			else
 			{
-				op val; nl
+				op val;nl
 			}
 		}
 	}
 	else
+	{
 		for(int i=k;i<n;i++)
 		{
 			swapBits(val,k,i);
 			generateKBitNumbers(val,k+1,n,mode);
 			swapBits(val,k,i);
 		}
-	highest=0; //reset highest for multiple calls
+	}
+	
 }
 
 int main()
 {
-	int n=5,k=3;
+	int n=5,k=3,mode=0;
 	op "Enter limit. limit is 2 to the power of ";
-	//ip n; nl
+	ip n; nl
 	op "Enter the number of set bits needed "; nl
-	//ip k;
+	ip k;
 	k=pow(2,k)-1;
-	generateKBitNumbers(k,0,n,1);
+	char ch='n';
+	op "print in binary? y/n ";
+	ip ch;
+	if(ch=='y')
+		generateKBitNumbers(k,0,n,1);
+	else
+		generateKBitNumbers(k,0,n);
 	return 0;
 }

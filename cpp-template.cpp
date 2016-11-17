@@ -1,5 +1,5 @@
 #include "bits/stdc++.h"
-
+using namespace std;
 /* useful utility macros */
 #define MIN(a,b,res) ((a)>(b))? (res)=(b):(res)=(a)
 #define MAX(a,b,res) ((a)<(b))? (res)=(b):(res)=(a)
@@ -19,7 +19,6 @@ typedef long long ll;
 #define err cerr<< //output to stderr
 #define nl cout<<"\n"; //newline
 
-using namespace std;
 int main()
 {
 	return 0;

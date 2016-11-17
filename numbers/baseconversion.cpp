@@ -23,7 +23,7 @@ int to_base(int x,int base)
 }
 int main()
 {
-	int x=100,b=16;
+	int x=25,b=2;
 	cout<<"Enter number and which base to convert it to";
 	//cin>>x>>b;
 	cout<<"\nResult is ";
