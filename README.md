@@ -30,6 +30,7 @@ my implementations of common algorithms and useful data structures
       * fermats-little-theorem-primality-test (primality test using fermat's little theorem. higher complexity (number of tests) gives higher accuracy)
       * fermat's integer factorization
       * Pollard Rho Integer factorization
+      * largest prime factor of a (long long int) number
   7. **sorting**
       * selectionsort
       * bubblesort
