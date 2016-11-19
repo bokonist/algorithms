@@ -26,6 +26,7 @@ my implementations of common algorithms and useful data structures
   5. **greedy**
       * 0-1knapsack (classic 0-1 knapsack problem using George Dantzig's greedy approach)
   6. **numbers**
+      * O(sqrt(n)) primality check
       * baseconversion (convert a decimal to any base)
       * fermats-little-theorem-primality-test (primality test using fermat's little theorem. higher complexity (number of tests) gives higher accuracy)
       * fermat's integer factorization
