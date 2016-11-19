@@ -28,6 +28,7 @@ my implementations of common algorithms and useful data structures
   6. **numbers**
       * baseconversion (convert a decimal to any base)
       * fermats-little-theorem-primality-test (primality test using fermat's little theorem. higher complexity (number of tests) gives higher accuracy)
+      * fermat's integer factorization
   7. **sorting**
       * selectionsort
       * bubblesort
