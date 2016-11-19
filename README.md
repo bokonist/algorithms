@@ -35,5 +35,6 @@ my implementations of common algorithms and useful data structures
       * mergeSort
       * quickSort
       * radixsort
+      * insertionsort
       
  cpp-template (a template for competitions, filled with shorthands and useful macros)
