@@ -10,6 +10,8 @@ my implementations of common algorithms and useful data structures
       2. trees
           * segment-tree
           * tries
+      3. linked lists
+          * floyd's cycle detection algorithm
   2. **backtracking**
       * nqueens-backtracking
       * nqueens-branch_and_bound
