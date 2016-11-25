@@ -1,4 +1,4 @@
-//https://www.hackerrank.com/challenges/journey-to-the-moon
+
 #include "bits/stdc++.h"
 using namespace std;
 /* useful utility macros */
@@ -26,7 +26,7 @@ int n_nodes; //number of nodes
 int treeCount=1;
 int exploreForest(int src)
 {
-	op "Tree #"<<treeCount<<" : ";
+	op "Tree #"<<treeCount++<<" : ";
 	stack<int> s;
 	s.push(src);
 	int i,count=0;
