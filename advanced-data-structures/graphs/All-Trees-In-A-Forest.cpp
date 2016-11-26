@@ -26,7 +26,7 @@ int n_nodes; //number of nodes
 int treeCount=1;
 int exploreForest(int src)
 {
-	op "Tree #"<<treeCount<<" : ";
+	op "Tree #"<<treeCount++<<" : ";
 	stack<int> s;
 	s.push(src);
 	int i,count=0;
@@ -37,12 +37,15 @@ int exploreForest(int src)
 		op i<<"-";
 		s.pop();
 		visited[i]=true;
+		if(i==4)
+			op "visited 4\n";
 		for (int j = 0; j < n_nodes; ++j)
 		{
-			if(connection[i][j]==true && !visited[j])
+			if(connection[i][j]==true && ! visited[j])
 				s.push(j);
 		}
 	}
+	op "Population is "<<count;
 	return count;
 }
 int main()
