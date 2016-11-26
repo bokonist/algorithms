@@ -1,4 +1,3 @@
-
 #include "bits/stdc++.h"
 using namespace std;
 /* useful utility macros */
@@ -20,65 +19,61 @@ typedef long long ll;
 #define err cerr<< //output to stderr
 #define nl cout<<"\n"; //newline
 
-bool **connection; //adjacency matrix
+map<int, vector<int> > neighbours; //adjacency list for the graph
 bool *visited; //mark visited
-int n_nodes; //number of nodes
 int treeCount=1;
-int exploreForest(int src)
+int population=0;
+
+int exploreForest(int src , int mode =0) //mode 0 is for following non-roots, i.e. to follow a separate disjoint tree. mode 1 to follow an internal node of a tree
 {
-	op "Tree #"<<treeCount++<<" : ";
-	stack<int> s;
-	s.push(src);
-	int i,count=0;
-	while(!s.empty())	
+	if(mode==0)
 	{
-		count++;
-		i=s.top();
-		op i<<"-";
-		s.pop();
-		visited[i]=true;
-		if(i==4)
-			op "visited 4\n";
-		for (int j = 0; j < n_nodes; ++j)
+		op "Tree #"<<treeCount++<<" : ";
+		op src<<' ';
+		population++;
+	}
+	visited[src]=true;
+	vector<int> v = neighbours[src];
+	for (vector<int>::iterator it = v.begin(); it!=v.end(); ++it)
+	{
+		if(visited[ *it ] == false)
 		{
-			if(connection[i][j]==true && ! visited[j])
-				s.push(j);
+			op *it<<' ';
+			exploreForest( *it , 1);
+			visited[ *it ]=true;
+			population++;
 		}
 	}
-	op "Population is "<<count;
-	return count;
+	return 0;
 }
 int main()
 {
-	int numberOfConnections,a,b;
+	int e,a,b,n_nodes;
 	op "Enter number of nodes in total : ";
 	ip n_nodes; //input number of nodes
 	op "Enter number of edges(connections) : ";
-	ip numberOfConnections; //input number of edges
-	connection = new bool*[n_nodes];
+	ip e; //input number of edges
 	visited = new bool[n_nodes];
-
 	for (int i = 0; i < n_nodes; ++i)
 	{
 		visited[i]=false;
-		connection[i] = new bool[n_nodes];
-		for (int j = 0; j < n_nodes; ++j)
-			connection[i][j]=false;
 	}
-
-	until(numberOfConnections,0)
+	until(e,0)
 	{
 		op "Enter A and B for edge A----B \n";
 		ip a>>b; //input a to b edge
-		connection[a][b]=true;
-		connection[b][a]=true;
+		neighbours[a].push_back(b);
+		neighbours[b].push_back(a);
 	}
+
 	op "Forest is\n";
 	for (int i = 0; i < n_nodes; ++i)
 	{
 		if(!visited[i])
 		{
 			exploreForest(i); 
+			op ". Population is "<<population;
+			population=0;
 			nl
 		}
 	}
