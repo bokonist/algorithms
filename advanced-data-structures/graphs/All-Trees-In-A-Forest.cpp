@@ -1,4 +1,4 @@
-//https://www.hackerrank.com/challenges/journey-to-the-moon
+
 #include "bits/stdc++.h"
 using namespace std;
 /* useful utility macros */
