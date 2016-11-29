@@ -73,11 +73,11 @@ void mergeSort(int* a,int low, int high)
 	
 }
 
-int main()
-{
+int main(){
+
 	int n=10;
 	op "Enter number of elements ";nl
-	//ip n;
+	ip n;
 	int a[n];
 	for (int i = 0; i < n; ++i)
 	{
