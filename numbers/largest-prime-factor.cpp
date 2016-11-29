@@ -31,6 +31,7 @@ ll largestPrimeFactor(ll x)
         {
                 if (x%lpf==0) //x is divisible by our current largest prime
                 {
+                        op x<<" is div by "<<lpf; nl
                         x = x/lpf; //divide it and assign it to x
                         lpf = 2; //reset lpf so we can begin this process all over again to check the new x
                 }
@@ -48,8 +49,8 @@ int main()
 {
     ll n;
     op "Enter number (type: long long int) to find largest prime factor of :";
-    cin>>n;
-	//op largestPrimeFactor(600851475143);
-    op "Largest prime factor of "<<n<<" is "<<largestPrimeFactor(n);
+    //cin>>n;
+	op largestPrimeFactor(100007);
+    //op "Largest prime factor of "<<n<<" is "<<largestPrimeFactor(n);
 	return 0;
 }
